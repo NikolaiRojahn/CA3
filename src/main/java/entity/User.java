@@ -52,11 +52,7 @@ public class User implements Serializable {
 
     //TODO Change when password is hashed
     public boolean verifyPassword(String pw) {
-        try{
             return (BCrypt.checkpw(pw, userPass));
-        }catch(Exception ex){
-        throw new RuntimeException("ERROR VERIFYING PW");
-        }
         //return (pw.equals(userPass));
     }
 
